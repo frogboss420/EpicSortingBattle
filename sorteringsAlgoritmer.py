@@ -1,4 +1,4 @@
-import random, copy
+import random, tests
 
 def bogoSort(items):
     # Kopier den liste, vi har modtaget som parameter, så vi ikke ændrer den originale
@@ -23,16 +23,23 @@ def bogoSort(items):
 
 
 if __name__ == '__main__':
-    l = list(range(0, 5))
-    lb = l.copy()
-    for i in range(50):
+    ## Skriv navnet på den algoritme, der skal testes
+    algorithm = bogoSort
+
+    passedTest = True
+    for i in range(10):
+        l = list(range(0, 10))
+        lb = l.copy()
         random.shuffle(lb)
-        ## Kald den funktion, du vil teste
-        ls = bogoSort(l)
-        ## Kald den funktion, du vil teste
-        if ls != l:
-            print('Fejl! Algoritmen kan ikke sortere.')
+        ls = lb.copy()
+        if not tests.sortsCorrectly(ls, algorithm):
+            passedTest = False
             break
-    print('Succes! Algoritmen sorterer korrekt.')
+
+    if passedTest:
+        print('Succes! Algoritmen sorterer korrekt.')
+    else:
+        print('Fejl! Algoritmen kan ikke sortere.')
+
     print('blandet: ', lb)
-    print('sorteret:', ls)
+    print('sorteret:', algorithm(ls))
