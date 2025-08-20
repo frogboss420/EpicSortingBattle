@@ -26,54 +26,34 @@ def bubbleSort(items):
     #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
     items = items.copy()
 
-    #Boolean til markering af, om listen er sorteret
-    isSorted = False
+    # 'for' lykke som køre i antallet af enheder
+    # i vores data (items)
+    for i in range(len(items)):
 
-    #Tællevariabel til at holde styr på antal af forsøg
-    attempts = 0
+        #sørge for vi ikke
+        #ender med at dobbelt tjekke allerede sorteret data
+        for j in range (1, len(items)-i):
 
-    #while lykke som kører endtil vores data (item) er sorteret.
-    while isSorted == False:
+            # 'if' sætning til samligning af data (items index j )
+            # ser om indexet er mindre en det forige, samt gør den at vi
+            # ikke har brug for et tjek i slutningen af et loop med at se
+            # på tal vi allerede har tjekket
+            # dette spare lidt resourcer
+            # DOG tjekkere vi stadig elementer som kunne være
+            # sorteret bare ikke den sidste værdi
+            if items[j] < items[j-1]:
+                items[j], items[j-1] = items[j-1], items[j]
 
-        #tæller antal forsøg
-        attempts += 1
-
-        #'if' sættning som tjek for at stoppe tendensen mod uendeligt
-        if attempts > len(items) * 5000:
-            print('Giver op på grund af for mange forsøg ({}) og bruger TimSort'.format(attempts))
-            print('Giver op på grund af for mange forsøg ({}) og bruger TimSort'.format(attempts))
-            items.sort()
-            return items
-
-        # 'for' lykke som køre i antallet af enheder
-        # i vores data (items)
-        for i in range(len(items)):
-
-            #sørge for vi ikke
-            #ender med at dobbelt tjekke allerede sorteret data
-            for j in range (1, len(items)-i):
-
-                # 'if' sætning til samligning af data (items index j )
-                # ser om indexet er mindre en det forige, samt gør den at vi
-                # ikke har brug for et tjek i slutningen af et loop med at se
-                # på tal vi allerede har tjekket
-                # dette spare lidt resourcer
-                # DOG tjekkere vi stadig elementer som kunne være
-                # sorteret bare ikke den sidste værdi
-                if items[j] < items[j-1]:
-                    items[j], items[j-1] = items[j-1], items[j]
-
-        #giver den sorteret data tilbage
-        return items
-
-        # siger til 'while' løkken at dataen er sorteret
-        isSorted = True
+    #giver den sorteret data tilbage
+    return items
 
 
 
 
+#insertSort sorteringsalgoritme (intermidiate+)
 
-#quickSort sortringsalgoritme (advanced)
+
+#mergeSort sortringsalgoritme (advanced?)
 
 
 if __name__ == '__main__':
