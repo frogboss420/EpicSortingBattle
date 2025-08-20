@@ -63,11 +63,11 @@ def bubbleSort(items):
                 if items[j] < items[j-1]:
                     items[j], items[j-1] = items[j-1], items[j]
 
-        #siger til 'while' løkken at dataen er sorteret
-        isSorted = True
-
         #giver den sorteret data tilbage
         return items
+
+        # siger til 'while' løkken at dataen er sorteret
+        isSorted = True
 
 
 
