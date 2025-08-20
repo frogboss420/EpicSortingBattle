@@ -22,9 +22,9 @@ import random, tests
 #    return items
 
 #bubbleSort sortringsalgoritme (intermediate)
-def bubbleSort(item):
+def bubbleSort(items):
     #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
-    items = item.copy()
+    items = items.copy()
 
     #Boolean til markering af, om listen er sorteret
     isSorted = False
@@ -53,13 +53,15 @@ def bubbleSort(item):
             #ender med at dobbelt tjekke allerede sorteret data
             for j in range (1, len(items)-i):
 
-                # 'if' sætning til samligning af data (items index i)
+                # 'if' sætning til samligning af data (items index j )
                 # ser om indexet er mindre en det forige, samt gør den at vi
                 # ikke har brug for et tjek i slutningen af et loop med at se
                 # på tal vi allerede har tjekket
                 # dette spare lidt resourcer
-                if items[i] < items[i-1]:
-                    items[i], items[i-1] = items[i-1], items[i]
+                # DOG tjekkere vi stadig elementer som kunne være
+                # sorteret bare ikke den sidste værdi
+                if items[j] < items[j-1]:
+                    items[j], items[j-1] = items[j-1], items[j]
 
         #siger til 'while' løkken at dataen er sorteret
         isSorted = True
