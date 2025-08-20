@@ -48,7 +48,7 @@ def bubbleSort(item):
         # 'for' lykke som køre i antallet af enheder
         # i vores data (items) burde også sørge for vi ikke
         # ender med at dobbelt tjekke allerede sorteret data
-        for i in range(1, len(items)-i):
+        for i in range(len(items)):
 
             # 'if' sætning til samligning af data (items index i)
             # ser om indexet er mindre en det forige, samt gør den at vi
