@@ -24,7 +24,7 @@ import random, tests
 #bubbleSort sortringsalgoritme (intermediate)
 def bubbleSort(item):
     #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
-    items = items.copy()
+    items = item.copy()
 
     #Boolean til markering af, om listen er sorteret
     isSorted = False
@@ -42,21 +42,24 @@ def bubbleSort(item):
         if attempts > len(items) * 5000:
             print('Giver op på grund af for mange forsøg ({}) og bruger TimSort'.format(attempts))
             print('Giver op på grund af for mange forsøg ({}) og bruger TimSort'.format(attempts))
-                items.sort()
-                return items
+            items.sort()
+            return items
 
         # 'for' lykke som køre i antallet af enheder
-        # i vores data (items) burde også sørge for vi ikke
-        # ender med at dobbelt tjekke allerede sorteret data
+        # i vores data (items)
         for i in range(len(items)):
 
-            # 'if' sætning til samligning af data (items index i)
-            # ser om indexet er mindre en det forige, samt gør den at vi
-            # ikke har brug for et tjek i slutningen af et loop med at se
-            # på tal vi allerede har tjekket
-            # dette spare lidt resourcer
-            if items[i] < items[i-1]:
-                items[i], items[i-1] = items[i-1], items[i]
+            #sørge for vi ikke
+            #ender med at dobbelt tjekke allerede sorteret data
+            for j in range (1, len(items)-i):
+
+                # 'if' sætning til samligning af data (items index i)
+                # ser om indexet er mindre en det forige, samt gør den at vi
+                # ikke har brug for et tjek i slutningen af et loop med at se
+                # på tal vi allerede har tjekket
+                # dette spare lidt resourcer
+                if items[i] < items[i-1]:
+                    items[i], items[i-1] = items[i-1], items[i]
 
         #siger til 'while' løkken at dataen er sorteret
         isSorted = True
@@ -73,7 +76,7 @@ def bubbleSort(item):
 
 if __name__ == '__main__':
     ## Skriv navnet på den algoritme, der skal testes
-    algorithm = bogoSort
+    algorithm = bubbleSort
 
     passedTest = True
     for i in range(10):
