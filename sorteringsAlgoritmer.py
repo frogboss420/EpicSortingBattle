@@ -27,13 +27,13 @@ def bubbleSort(item):
     items = items.copy()
 
     #Boolean til markering af, om listen er sorteret
-    isSorted = None
+    isSorted = False
 
     #Tællevariabel til at holde styr på antal af forsøg
     attempts = 0
 
     #while lykke som kører endtil vores data (item) er sorteret.
-    while not isSorted:
+    while isSorted == False:
 
         #tæller antal forsøg
         attempts += 1
@@ -57,8 +57,12 @@ def bubbleSort(item):
             # dette spare lidt resourcer
             if items[i] < items[i-1]:
                 items[i], items[i-1] = items[i-1], items[i]
-            print(items)
 
+        #siger til 'while' løkken at dataen er sorteret
+        isSorted = True
+
+        #giver den sorteret data tilbage
+        return items
 
 
 
