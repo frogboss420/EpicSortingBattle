@@ -21,7 +21,7 @@ import random, tests
 #    print('Sorteret efter {} forsøg'.format(attempts))
 #    return items
 
-#bubbleSort sortringsalgoritme (intermediate)
+#bubbleSort sortringsalgoritme
 def bubbleSort(items):
     #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
     items = items.copy()
@@ -51,7 +51,9 @@ def bubbleSort(items):
 
 
 #insertSort sorteringsalgoritme (intermidiate+)
-
+def insertSort(items):
+    #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
+    items = items.copy()
 
 #mergeSort sortringsalgoritme (advanced?)
 
