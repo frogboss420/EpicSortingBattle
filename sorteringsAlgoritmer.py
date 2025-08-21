@@ -50,7 +50,7 @@ def bubbleSort(items):
 
 
 
-#insertSort sorteringsalgoritme (intermidiate+)
+#insertSort sorteringsalgoritme
 def insertSort(items):
     #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
     items = items.copy()
