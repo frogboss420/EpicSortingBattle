@@ -56,7 +56,7 @@ def insertSort(items):
     items = items.copy()
 
     #algoritmen køre i længden af den usorteret liste
-    for i in range(len[items]):
+    for i in range(len(items)):
 
         #holder styr på elementet vi sortere for at spare ressourcer
         for j in range(i):
@@ -66,19 +66,39 @@ def insertSort(items):
 
                 #placere element det rigtige sted
                 items[i], items[j] = items[j], items[i]
+    return(items)
 
 
 
 
 
 
+#mergeSort sortringsalgoritme
+def mergeSort(items):
+    items = items.copy()
 
-#mergeSort sortringsalgoritme (advanced?)
+    middle = len(items)//2
+
+    L = items[:middle]
+    R = items[middle:]
+
+    if len(L) > 1:
+        L = mergeSort(L)
+    if len(R) > 1:
+        R = mergeSort(R)
+
+    items = []
+    while len(L)>0 and len(R)>0:
+
+    print(L,R)
+    return (L, R)
+
+
 
 
 if __name__ == '__main__':
     ## Skriv navnet på den algoritme, der skal testes
-    algorithm = bubbleSort
+    algorithm = mergeSort
 
     passedTest = True
     for i in range(10):
