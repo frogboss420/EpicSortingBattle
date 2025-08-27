@@ -55,25 +55,17 @@ def insertSort(items):
     #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
     items = items.copy()
 
-    #liste som skal indeholde den sorteret data, starter med en enhed
-    #fra usorteret datasæt
-    sortedItems = [items[0]]
+    #algoritmen køre i længden af den usorteret liste
+    for i in range(len[items]):
 
-    #fjerner det element som man starter med at placere i den sorteret data liste
-    items.pop(0)
+        #holder styr på elementet vi sortere for at spare ressourcer
+        for j in range(i):
 
-    # 'for' løkke som køre i antallet af enheder
-    # i vores data (items)
-    for i in range(len(items)):
+            #samligner elementer
+            if items[i] <= items[j]:
 
-        #tilføjer data element for usorteret sæt til sorteret sæt
-        #herfra kan man samligne dem
-        sortedItems.append(items[i])
-
-        #'for' løkke til at huske det data indeks algortimen nået til
-        #ifm. sammenligningen mellem usorteret og sorteret data
-        for j in range (len(sortedItems)):
-            if items[i] < sortedItems[len(sortedItems)-j-1]:
+                #placere element det rigtige sted
+                items[i], items[j] = items[j], items[i]
 
 
 
