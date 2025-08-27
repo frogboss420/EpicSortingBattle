@@ -52,6 +52,22 @@ def bubbleSort(items):
 
 #insertSort sorteringsalgoritme
 def insertSort(items):
+    #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
+    items = items.copy()
+
+    #algoritmen køre i længden af den usorteret liste
+    for i in range(len[items]):
+
+        #holder styr på elementet vi sortere for at spare ressourcer
+        for j in range(i):
+
+            #samligner elementer
+            if items[i] <= items[j]:
+
+                #placere element det rigtige sted
+                items[i], items[j] = items[j], items[i]
+
+
 
 
 
