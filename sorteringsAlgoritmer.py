@@ -50,10 +50,35 @@ def bubbleSort(items):
 
 
 
-#insertSort sorteringsalgoritme (intermidiate+)
+#insertSort sorteringsalgoritme
 def insertSort(items):
     #Kopier den liste, vi modtager som parameter, for ikke at ændrer originale
     items = items.copy()
+
+    #liste som skal indeholde den sorteret data, starter med en enhed
+    #fra usorteret datasæt
+    sortedItems = [items[0]]
+
+    #fjerner den enhed som man starter med at placere i den sorteret data liste
+    items.pop(0)
+
+    # 'for' løkke som køre i antallet af enheder
+    # i vores data (items)
+    for i in range(len(items)):
+
+        #tilføjer data enhed for usorteret sæt til sorteret sæt
+        #herfra kan man samligne dem
+        sortedItems.append(items[i])
+
+        #'for' løkke til at huske det data indeks algortimen nået til
+        #ifm. sammenligningen mellem usorteret og sorteret data
+        for j in range (len(sortedItems)):
+            if items[i] < sortedItems[len(sortedItems)-j-1]:
+
+
+
+
+
 
 #mergeSort sortringsalgoritme (advanced?)
 
