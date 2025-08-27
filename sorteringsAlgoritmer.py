@@ -73,7 +73,24 @@ def insertSort(items):
 
 
 
-#mergeSort sortringsalgoritme (advanced?)
+#mergeSort sortringsalgoritme
+def mergeSort(items):
+    items = items.copy()
+
+    middle = len(items)//2
+
+    L = items[:middle]
+    R = items[middle:]
+
+    if len(L) > 1:
+        L = mergeSort(L)
+    if len(R) > 1:
+        R = mergeSort(R)
+
+    print(L,R)
+    return (L, R)
+
+
 
 
 if __name__ == '__main__':
