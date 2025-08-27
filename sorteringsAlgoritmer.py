@@ -87,6 +87,9 @@ def mergeSort(items):
     if len(R) > 1:
         R = mergeSort(R)
 
+    items = []
+    while len(L)>0 and len(R)>0:
+
     print(L,R)
     return (L, R)
 
@@ -95,7 +98,7 @@ def mergeSort(items):
 
 if __name__ == '__main__':
     ## Skriv navnet på den algoritme, der skal testes
-    algorithm = insertSort
+    algorithm = mergeSort
 
     passedTest = True
     for i in range(10):
