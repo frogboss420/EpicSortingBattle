@@ -56,7 +56,7 @@ def insertSort(items):
     items = items.copy()
 
     #algoritmen køre i længden af den usorteret liste
-    for i in range(len[items]):
+    for i in range(len(items)):
 
         #holder styr på elementet vi sortere for at spare ressourcer
         for j in range(i):
@@ -66,7 +66,7 @@ def insertSort(items):
 
                 #placere element det rigtige sted
                 items[i], items[j] = items[j], items[i]
-
+    return(items)
 
 
 
@@ -78,7 +78,7 @@ def insertSort(items):
 
 if __name__ == '__main__':
     ## Skriv navnet på den algoritme, der skal testes
-    algorithm = bubbleSort
+    algorithm = insertSort
 
     passedTest = True
     for i in range(10):
