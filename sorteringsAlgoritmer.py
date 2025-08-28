@@ -73,7 +73,7 @@ def insertSort(items):
 
 
 
-#mergeSort sortringsalgoritme
+#mergeSort sorteringsalgoritme
 def mergeSort(items):
     items = items.copy()
 
@@ -89,9 +89,17 @@ def mergeSort(items):
 
     items = []
     while len(L)>0 and len(R)>0:
+        if L[0] >= R[0]:
+            items.append(R.pop(0))
+        else:
+            items.append(L.pop(0))
+    else:
+        if len(L) == 0:
+            items.extend(R)
+        else:
+            items.extend(L)
 
-    print(L,R)
-    return (L, R)
+    return items
 
 
 
