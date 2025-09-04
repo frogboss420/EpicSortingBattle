@@ -77,29 +77,40 @@ def insertSort(items):
 def mergeSort(items):
     items = items.copy()
 
+    #variable for det midterste element i liste
     middle = len(items)//2
 
+    #udgør 2 nye lister med den ene og anden hafdel af element listen
     L = items[:middle]
     R = items[middle:]
 
+    #opdlere de 2 lister yderligere så længe der er mere end 1 element i dem
     if len(L) > 1:
         L = mergeSort(L)
     if len(R) > 1:
         R = mergeSort(R)
 
+    #opstiller tom liste som bliver til sorteret liste
     items = []
+
+    #samligner og tilføjere element til sorteret liste
+    #(udgangspunkt i de 2 listers underlister)
     while len(L)>0 and len(R)>0:
         if L[0] >= R[0]:
             items.append(R.pop(0))
         else:
             items.append(L.pop(0))
+
+    #er en liste tom kan er det resterende tilbage sorteret
+    #og kan tilføjes til listen
     else:
         if len(L) == 0:
             items.extend(R)
         else:
             items.extend(L)
-
     return items
+
+
 
 
 
